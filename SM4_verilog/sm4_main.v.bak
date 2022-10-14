@@ -1,0 +1,322 @@
+module	sm4 (
+				clk				,
+				rst_n			,
+
+				dec_en			,	//Mode: 0:Enc; 1:Dec; 
+
+				key_ld			,	//1:Load the key to generate rki;	
+				key_in_0		,	//Key input for SM4, 32-bit [127:96];
+				key_in_1		,	//Key input for SM4, 32-bit [95:64];
+				key_in_2		,	//Key input for SM4, 32-bit [63:32];
+				key_in_3		,	//Key input for SM4, 32-bit [31:0];
+				key_ready		,	//1:rki are ready for Enc or Dec;
+
+				de_in			,	//Data enable input;
+				data_in_0		,	//Data input, 32-bit [127:96];
+				data_in_1		,	//Data input, 32-bit [95:64];
+				data_in_2		,	//Data input, 32-bit [63:32];
+				data_in_3		,   //Data input, 32-bit [31:0];
+
+				de_out			,	//Data enable output;
+				data_out_0		,	//Data output, 32-bit [127:96];
+				data_out_1		,	//Data output, 32-bit [95:64];
+				data_out_2		,	//Data output, 32-bit [63:32];
+				data_out_3  		//Data output, 32-bit [31:0];
+			 );
+
+//
+//Signal
+//
+
+input			clk				;
+input			rst_n			;
+
+input			dec_en			;	
+
+input			key_ld			;	
+input	[31:0]  key_in_0		;	
+input	[31:0]  key_in_1		;
+input	[31:0]  key_in_2		;
+input	[31:0]  key_in_3		;
+output			key_ready		;	
+
+input			de_in			;	
+input	[31:0]	data_in_0		;	
+input	[31:0]	data_in_1		;
+input	[31:0]	data_in_2		;
+input	[31:0]	data_in_3		;
+
+
+output			de_out			;	
+output	[31:0]	data_out_0		;	
+output	[31:0]	data_out_1		;
+output	[31:0]	data_out_2		;
+output	[31:0]	data_out_3		;
+
+//
+//Control
+//
+
+reg		[5:0]	cnt			    ;
+reg				going			;
+reg				done			;
+
+always @(negedge rst_n or posedge clk) begin  //counter
+  if(!rst_n) begin
+    cnt	<= 6'h0	;
+  end
+  else if(done|key_ld|de_in) begin
+    cnt	<= 6'h0	;
+  end
+  else if(going) begin
+    cnt	<= cnt + 1'b1	;
+  end
+end
+
+always @(negedge rst_n or posedge clk) begin //round function go or not
+  if(!rst_n) begin
+    going	<= 1'b0	;
+  end
+  else if((key_ld|de_in) & !going) begin
+    going	<= 1'b1	;
+  end
+  else if(cnt >= 6'h1f) begin
+    going	<= 1'b0	;
+  end
+end
+
+always @(negedge rst_n or posedge clk) begin //32 round already
+  if(!rst_n) begin
+    done	<= 1'b0	;
+  end
+  else if((key_ld|de_in) & !going) begin
+    done	<= 1'b0	;
+  end
+  else begin
+    done	<= (cnt == 6'h1f) ;
+  end
+end
+
+//
+//The singal control to generate rk or data
+//
+
+reg				kgen_en		;	 //1:generate rk
+reg				key_ready	;
+
+always @(negedge rst_n or posedge clk) begin  //generate key or data
+  if(!rst_n) begin
+    kgen_en		<= 1'b0	;
+  end
+  else if(key_ld & !going) begin
+    kgen_en		<= 1'b1	;
+  end
+  else if(done & kgen_en) begin
+    kgen_en		<= 1'b0	;
+  end
+end
+
+always @(negedge rst_n or posedge clk) begin  //key already
+  if(!rst_n) begin
+    key_ready	<= 1'b0	;
+  end
+  else if(key_ld & !going) begin
+    key_ready	<= 1'b0	;
+  end
+  else if(done & kgen_en) begin
+    key_ready	<= 1'b1	;
+  end
+end
+
+
+reg		[31:0]	rkey_buf [0:31]	;
+reg		[31:0]	rkey			;	//round key;
+reg		[ 5:0]	j				;
+
+wire	[31:0]	da_round_out	;	
+
+always @(negedge rst_n or posedge clk) begin
+  if(!rst_n) begin
+    for(j=0; j<6'h20; j=j+1) 
+	  rkey_buf[j]  <= 32'h0;
+  end
+  else if(kgen_en & going) begin
+	rkey_buf[cnt] <= da_round_out ;
+  end
+end
+
+//Parameter
+
+wire	[31:0]	ckey_buf [31:0]	;
+
+wire	[31:0]	fkey_x0	;
+wire	[31:0]	fkey_x1	;
+wire	[31:0]	fkey_x2	;
+wire	[31:0]	fkey_x3	;
+
+assign	fkey_x0      = 32'hA3B1BAC6 ;
+assign	fkey_x1      = 32'h56AA3350 ;
+assign	fkey_x2      = 32'h677D9197 ;
+assign	fkey_x3      = 32'hB27022DC ;
+
+assign	ckey_buf[ 0] = 32'h00070e15	;
+assign	ckey_buf[ 1] = 32'h1c232a31	;
+assign	ckey_buf[ 2] = 32'h383f464d	;
+assign	ckey_buf[ 3] = 32'h545b6269	;
+
+assign	ckey_buf[ 4] = 32'h70777e85	;
+assign	ckey_buf[ 5] = 32'h8c939aa1	;
+assign	ckey_buf[ 6] = 32'ha8afb6bd	;
+assign	ckey_buf[ 7] = 32'hc4cbd2d9	;
+
+assign	ckey_buf[ 8] = 32'he0e7eef5	;
+assign	ckey_buf[ 9] = 32'hfc030a11	;
+assign	ckey_buf[10] = 32'h181f262d	;
+assign	ckey_buf[11] = 32'h343b4249	;
+
+assign	ckey_buf[12] = 32'h50575e65	;
+assign	ckey_buf[13] = 32'h6c737a81	;
+assign	ckey_buf[14] = 32'h888f969d	;
+assign	ckey_buf[15] = 32'ha4abb2b9	;
+
+assign	ckey_buf[16] = 32'hc0c7ced5	;
+assign	ckey_buf[17] = 32'hdce3eaf1	;
+assign	ckey_buf[18] = 32'hf8ff060d	;
+assign	ckey_buf[19] = 32'h141b2229	;
+
+assign	ckey_buf[20] = 32'h30373e45	;
+assign	ckey_buf[21] = 32'h4c535a61	;
+assign	ckey_buf[22] = 32'h686f767d	;
+assign	ckey_buf[23] = 32'h848b9299	;
+
+assign	ckey_buf[24] = 32'ha0a7aeb5	;
+assign	ckey_buf[25] = 32'hbcc3cad1	;
+assign	ckey_buf[26] = 32'hd8dfe6ed	;
+assign	ckey_buf[27] = 32'hf4fb0209	;
+
+assign	ckey_buf[28] = 32'h10171e25	;
+assign	ckey_buf[29] = 32'h2c333a41	;
+assign	ckey_buf[30] = 32'h484f565d	;
+assign	ckey_buf[31] = 32'h646b7279	;
+
+
+always @(negedge rst_n or posedge clk) begin //the order of key
+  if(!rst_n) begin
+	rkey  <= 32'h0;
+  end
+  else if(key_ld) begin
+	rkey  <=  ckey_buf[0];
+  end
+  else if(de_in) begin
+	rkey  <=  dec_en ? rkey_buf[31] : rkey_buf[0] ;
+  end
+  else if((cnt<6'h1f) & !kgen_en & going) begin
+	rkey  <=  dec_en ? rkey_buf[6'h1e - cnt] : rkey_buf[cnt+1];
+  end
+  else if((cnt<6'h1f) &  kgen_en & going) begin
+	rkey  <=  ckey_buf[cnt+1] ;
+  end
+  else begin
+	rkey  <=  32'h0;
+  end
+end
+
+reg		[31:0]	da_x0	;
+reg		[31:0]	da_x1	;
+reg		[31:0]	da_x2	;
+reg		[31:0]	da_x3	;
+
+wire	[31:0]	da_x0_in;
+wire	[31:0]	da_x1_in;
+wire	[31:0]	da_x2_in;
+wire	[31:0]	da_x3_in;
+
+wire	[31:0]	da_x0_next;
+wire	[31:0]	da_x1_next;
+wire	[31:0]	da_x2_next;
+wire	[31:0]	da_x3_next;
+
+always @(negedge rst_n or posedge clk) begin  //initial of Key or Plaintexts
+  if(!rst_n) begin
+	da_x0   <=  32'h0;
+	da_x1   <=  32'h0;
+	da_x2   <=  32'h0;
+	da_x3   <=  32'h0;
+  end
+  else if(key_ld & !going) begin
+	da_x0   <=  key_in_0 ^ fkey_x0 ;
+	da_x1   <=  key_in_1 ^ fkey_x1 ;
+	da_x2   <=  key_in_2 ^ fkey_x2 ;
+	da_x3   <=  key_in_3 ^ fkey_x3 ;
+  end
+  else if(de_in  & !going) begin
+	da_x0   <=  data_in_0 ;
+	da_x1   <=  data_in_1 ;
+	da_x2   <=  data_in_2 ;
+	da_x3   <=  data_in_3 ;
+  end
+  else if(going) begin
+	da_x0   <=  da_x0_next ;
+	da_x1   <=  da_x1_next ;
+	da_x2   <=  da_x2_next ;
+	da_x3   <=  da_x3_next ;
+  end
+end  
+
+//Shift
+assign	da_x0_next = da_x1	;
+assign	da_x1_next = da_x2	;
+assign	da_x2_next = da_x3	;
+assign	da_x3_next = da_round_out	;
+
+//put key or data into round function  
+assign	da_x0_in = da_x0;
+assign	da_x1_in = da_x1;
+assign	da_x2_in = da_x2;
+assign	da_x3_in = da_x3;
+
+sm4_round u_sm4_round (
+				.kgen_en		(kgen_en		),	//1:generate rk; 0:generate data;
+
+				.x0_in			(da_x0_in		),
+				.x1_in			(da_x1_in		),
+				.x2_in			(da_x2_in		),
+				.x3_in			(da_x3_in		),
+
+				.rkey_in		(rkey			),
+
+				.x4_out			(da_round_out	)
+		);
+
+
+reg		[31:0]	data_out_0	;
+reg		[31:0]	data_out_1	;
+reg		[31:0]	data_out_2	;
+reg		[31:0]	data_out_3	;
+
+reg				de_out		;
+
+wire			done_pre	;
+
+assign	done_pre = (cnt==6'h1f) & !de_in & !kgen_en;
+
+always @(posedge clk) de_out <=  done_pre; //output signal
+
+always @(negedge rst_n or posedge clk) begin
+  if(!rst_n) begin
+    data_out_0 <=  32'h0;
+    data_out_1 <=  32'h0;
+    data_out_2 <=  32'h0;
+    data_out_3 <=  32'h0;
+  end
+  else if(done_pre) begin
+	data_out_0 <=  da_x3_next;
+	data_out_1 <=  da_x2_next;
+	data_out_2 <=  da_x1_next;
+	data_out_3 <=  da_x0_next;
+  end	
+end
+
+
+endmodule
+

@@ -1,0 +1,35 @@
+`timescale 1ns / 1ps
+
+module SM3Calc_tb;
+
+reg  CLK;
+reg  RST;
+reg  ENABLE;
+reg  [65527:0] message;
+reg  [15:0]    messageLen;
+
+wire [255:0]   digest;
+				 
+SM3Calc(CLK,RST,ENABLE,message,messageLen,digest);
+
+always #5 CLK = ~CLK;
+
+initial
+begin
+    CLK = 1'b0;
+	 RST = 1'b0;
+	 ENABLE = 1'b0;
+	 message = 65528'd0;
+    messageLen = 16'd0; 
+
+	 #20
+	 RST = 1'b1;
+	 #10
+	 ENABLE = 1'b1;
+	 message = 65528'h616263;
+	 messageLen = 16'd24;
+	 
+	 #100000
+	 $stop;
+end
+endmodule

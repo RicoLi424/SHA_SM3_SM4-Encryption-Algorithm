@@ -1,0 +1,177 @@
+static ap_private<512, true> llvm_part_set_i512_i8(ap_private<512, true> llvm_cbe_Val,  char llvm_cbe_Rep, signed int llvm_cbe_Lo, signed int llvm_cbe_Hi) __ATTRIBUTE_WEAK__;
+static ap_private<512, true> llvm_part_set_i512_i32(ap_private<512, true> llvm_cbe_Val, signed int llvm_cbe_Rep, signed int llvm_cbe_Lo, signed int llvm_cbe_Hi) __ATTRIBUTE_WEAK__;
+static ap_private<512, true> llvm_part_select_i512(ap_private<512, true> llvm_cbe_Val, signed int llvm_cbe_Lo, signed int llvm_cbe_High) __ATTRIBUTE_WEAK__;
+  ap_private<512, false> llvm_cbe_tmp__165;
+  ap_private<512, false> llvm_cbe_tmp__165__PHI_TEMPORARY;
+  ap_private<512, false> llvm_cbe_tmp__172;
+  ap_private<512, false> llvm_cbe_tmp__176;
+  ap_private<512, false> llvm_cbe_tmp__177;
+  ap_private<512, false> llvm_cbe_tmp__179;
+  ap_private<512, false> llvm_cbe_tmp__180;
+  ap_private<512, false> llvm_cbe_tmp__184;
+  llvm_cbe_tmp__165__PHI_TEMPORARY = (ap_private<512, false> )((ap_private<512, false> )0u);   /* for PHI node */
+  llvm_cbe_tmp__165 = (ap_private<512, false> )llvm_cbe_tmp__165__PHI_TEMPORARY;
+printf("\n = %s",((ap_private<512, false> )0u).to_string().c_str());
+  llvm_cbe_tmp__172 = (ap_private<512, false> )llvm_part_set_i512_i8(llvm_cbe_tmp__165, llvm_cbe_tmp__168, llvm_cbe_tmp__170, llvm_cbe_tmp__171);
+    llvm_cbe_tmp__165__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_tmp__172;   /* for PHI node */
+  llvm_cbe_tmp__176 = (ap_private<512, false> )((ap_private<512, false> )(unsigned int )llvm_cbe_tmp__175&4294967295U);
+  llvm_cbe_tmp__177 = (ap_private<512, false> )llvm_cbe_tmp__172 << llvm_cbe_tmp__176;
+  llvm_cbe_tmp__179 = (ap_private<512, false> )llvm_part_set_i512_i32(llvm_cbe_tmp__177, 1u, llvm_cbe_tmp__178, llvm_cbe_tmp__178);
+  llvm_cbe_tmp__180 = (ap_private<512, false> )llvm_part_set_i512_i8(llvm_cbe_tmp__179, llvm_cbe_messageLen, 0u, 7u);
+  llvm_cbe_tmp__184 = (ap_private<512, false> )llvm_part_select_i512(llvm_cbe_tmp__180, llvm_cbe_tmp__182, llvm_cbe_tmp__183);
+ap_private<512, true> llvm_part_set_i512_i8(ap_private<512, true> llvm_cbe_Val,  char llvm_cbe_Rep, signed int llvm_cbe_Lo, signed int llvm_cbe_Hi) {
+  ap_private<512, false> llvm_cbe_tmp__230;
+  ap_private<512, false> llvm_cbe_tmp__236;
+  ap_private<512, false> llvm_cbe_val;
+  ap_private<512, false> llvm_cbe_val__PHI_TEMPORARY;
+  ap_private<512, false> llvm_cbe_rres;
+  ap_private<512, false> llvm_cbe_rres__PHI_TEMPORARY;
+  ap_private<512, false> llvm_cbe_tmp__238;
+  ap_private<512, false> llvm_cbe_tmp__239;
+  ap_private<512, false> llvm_cbe_tmp__240;
+  ap_private<512, false> llvm_cbe_tmp__241;
+  ap_private<512, false> llvm_cbe_tmp__242;
+  ap_private<512, false> llvm_cbe_tmp__242__PHI_TEMPORARY;
+  ap_private<512, false> llvm_cbe_tmp__243;
+  ap_private<512, false> llvm_cbe_tmp__244;
+  ap_private<512, false> llvm_cbe_tmp__245;
+  ap_private<512, false> llvm_cbe_tmp__246;
+  ap_private<512, false> llvm_cbe_tmp__247;
+  ap_private<512, false> llvm_cbe_tmp__248;
+  ap_private<512, false> llvm_cbe_tmp__249;
+  ap_private<512, false> llvm_cbe_tmp__250;
+  ap_private<512, false> llvm_cbe_part_set;
+  llvm_cbe_tmp__230 = (ap_private<512, false> )((ap_private<512, false> )(unsigned int )llvm_cbe_tmp__227&4294967295U);
+  llvm_cbe_tmp__236 = (ap_private<512, false> )((ap_private<512, false> )(unsigned char )llvm_cbe_tmp__235&255U);
+    llvm_cbe_tmp__242__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_tmp__236;   /* for PHI node */
+    llvm_cbe_val__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_tmp__236;   /* for PHI node */
+    llvm_cbe_rres__PHI_TEMPORARY = (ap_private<512, false> )((ap_private<512, false> )0u);   /* for PHI node */
+  llvm_cbe_val = (ap_private<512, false> )llvm_cbe_val__PHI_TEMPORARY;
+  llvm_cbe_rres = (ap_private<512, false> )llvm_cbe_rres__PHI_TEMPORARY;
+  llvm_cbe_tmp__238 = (ap_private<512, false> )llvm_cbe_val & ((ap_private<512, false> )1u);
+  llvm_cbe_tmp__239 = (ap_private<512, false> )((ap_private<512, false> )(((ap_private<512, false> )llvm_cbe_val) >> ((ap_private<512, false> )((ap_private<512, false> )1u))));
+  llvm_cbe_tmp__240 = (ap_private<512, false> )llvm_cbe_rres << ((ap_private<512, false> )1u);
+  llvm_cbe_tmp__241 = (ap_private<512, false> )llvm_cbe_tmp__240 | llvm_cbe_tmp__238;
+    llvm_cbe_tmp__242__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_tmp__241;   /* for PHI node */
+    llvm_cbe_val__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_tmp__239;   /* for PHI node */
+    llvm_cbe_rres__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_tmp__241;   /* for PHI node */
+  llvm_cbe_tmp__242 = (ap_private<512, false> )llvm_cbe_tmp__242__PHI_TEMPORARY;
+  llvm_cbe_tmp__243 = (ap_private<512, false> )((ap_private<512, false> )(unsigned int )llvm_cbe_tmp__229&4294967295U);
+  llvm_cbe_tmp__244 = (ap_private<512, false> )((ap_private<512, false> )-1ll) << llvm_cbe_tmp__230;
+  llvm_cbe_tmp__245 = (ap_private<512, false> )llvm_cbe_tmp__244 ^ ((ap_private<512, false> )-1ll);
+  llvm_cbe_tmp__246 = (ap_private<512, false> )llvm_cbe_tmp__244 << llvm_cbe_tmp__243;
+  llvm_cbe_tmp__247 = (ap_private<512, false> )(((((unsigned int )llvm_cbe_tmp__229&4294967295U) >= ((unsigned int )512u&4294967295U))) ? ((ap_private<512, false> )((ap_private<512, false> )0u)) : ((ap_private<512, false> )llvm_cbe_tmp__246));
+  llvm_cbe_tmp__248 = (ap_private<512, false> )llvm_cbe_tmp__245 | llvm_cbe_tmp__247;
+  llvm_cbe_tmp__249 = (ap_private<512, false> )llvm_cbe_tmp__248 & llvm_cbe_Val;
+  llvm_cbe_tmp__250 = (ap_private<512, false> )llvm_cbe_tmp__242 << llvm_cbe_tmp__230;
+  llvm_cbe_part_set = (ap_private<512, false> )llvm_cbe_tmp__249 | llvm_cbe_tmp__250;
+ap_private<512, true> llvm_part_set_i512_i32(ap_private<512, true> llvm_cbe_Val, signed int llvm_cbe_Rep, signed int llvm_cbe_Lo, signed int llvm_cbe_Hi) {
+  ap_private<512, false> llvm_cbe_tmp__255;
+  ap_private<512, false> llvm_cbe_tmp__260;
+  ap_private<512, false> llvm_cbe_val;
+  ap_private<512, false> llvm_cbe_val__PHI_TEMPORARY;
+  ap_private<512, false> llvm_cbe_rres;
+  ap_private<512, false> llvm_cbe_rres__PHI_TEMPORARY;
+  ap_private<512, false> llvm_cbe_tmp__262;
+  ap_private<512, false> llvm_cbe_tmp__263;
+  ap_private<512, false> llvm_cbe_tmp__264;
+  ap_private<512, false> llvm_cbe_tmp__265;
+  ap_private<512, false> llvm_cbe_tmp__266;
+  ap_private<512, false> llvm_cbe_tmp__266__PHI_TEMPORARY;
+  ap_private<512, false> llvm_cbe_tmp__267;
+  ap_private<512, false> llvm_cbe_tmp__268;
+  ap_private<512, false> llvm_cbe_tmp__269;
+  ap_private<512, false> llvm_cbe_tmp__270;
+  ap_private<512, false> llvm_cbe_tmp__271;
+  ap_private<512, false> llvm_cbe_tmp__272;
+  ap_private<512, false> llvm_cbe_tmp__273;
+  ap_private<512, false> llvm_cbe_tmp__274;
+  ap_private<512, false> llvm_cbe_part_set;
+  llvm_cbe_tmp__255 = (ap_private<512, false> )((ap_private<512, false> )(unsigned int )llvm_cbe_tmp__252&4294967295U);
+  llvm_cbe_tmp__260 = (ap_private<512, false> )((ap_private<512, false> )(unsigned int )llvm_cbe_tmp__259&4294967295U);
+    llvm_cbe_tmp__266__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_tmp__260;   /* for PHI node */
+    llvm_cbe_val__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_tmp__260;   /* for PHI node */
+    llvm_cbe_rres__PHI_TEMPORARY = (ap_private<512, false> )((ap_private<512, false> )0u);   /* for PHI node */
+  llvm_cbe_val = (ap_private<512, false> )llvm_cbe_val__PHI_TEMPORARY;
+  llvm_cbe_rres = (ap_private<512, false> )llvm_cbe_rres__PHI_TEMPORARY;
+  llvm_cbe_tmp__262 = (ap_private<512, false> )llvm_cbe_val & ((ap_private<512, false> )1u);
+  llvm_cbe_tmp__263 = (ap_private<512, false> )((ap_private<512, false> )(((ap_private<512, false> )llvm_cbe_val) >> ((ap_private<512, false> )((ap_private<512, false> )1u))));
+  llvm_cbe_tmp__264 = (ap_private<512, false> )llvm_cbe_rres << ((ap_private<512, false> )1u);
+  llvm_cbe_tmp__265 = (ap_private<512, false> )llvm_cbe_tmp__264 | llvm_cbe_tmp__262;
+    llvm_cbe_tmp__266__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_tmp__265;   /* for PHI node */
+    llvm_cbe_val__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_tmp__263;   /* for PHI node */
+    llvm_cbe_rres__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_tmp__265;   /* for PHI node */
+  llvm_cbe_tmp__266 = (ap_private<512, false> )llvm_cbe_tmp__266__PHI_TEMPORARY;
+  llvm_cbe_tmp__267 = (ap_private<512, false> )((ap_private<512, false> )(unsigned int )llvm_cbe_tmp__254&4294967295U);
+  llvm_cbe_tmp__268 = (ap_private<512, false> )((ap_private<512, false> )-1ll) << llvm_cbe_tmp__255;
+  llvm_cbe_tmp__269 = (ap_private<512, false> )llvm_cbe_tmp__268 ^ ((ap_private<512, false> )-1ll);
+  llvm_cbe_tmp__270 = (ap_private<512, false> )llvm_cbe_tmp__268 << llvm_cbe_tmp__267;
+  llvm_cbe_tmp__271 = (ap_private<512, false> )(((((unsigned int )llvm_cbe_tmp__254&4294967295U) >= ((unsigned int )512u&4294967295U))) ? ((ap_private<512, false> )((ap_private<512, false> )0u)) : ((ap_private<512, false> )llvm_cbe_tmp__270));
+  llvm_cbe_tmp__272 = (ap_private<512, false> )llvm_cbe_tmp__269 | llvm_cbe_tmp__271;
+  llvm_cbe_tmp__273 = (ap_private<512, false> )llvm_cbe_tmp__272 & llvm_cbe_Val;
+  llvm_cbe_tmp__274 = (ap_private<512, false> )llvm_cbe_tmp__266 << llvm_cbe_tmp__255;
+  llvm_cbe_part_set = (ap_private<512, false> )llvm_cbe_tmp__273 | llvm_cbe_tmp__274;
+ap_private<512, true> llvm_part_select_i512(ap_private<512, true> llvm_cbe_Val, signed int llvm_cbe_Lo, signed int llvm_cbe_High) {
+  ap_private<512, false> llvm_cbe_tmp;
+  ap_private<512, false> llvm_cbe_tmp1;
+  ap_private<512, false> llvm_cbe_rbits;
+  ap_private<512, false> llvm_cbe_fbits;
+  ap_private<512, false> llvm_cbe_bits;
+  ap_private<512, false> llvm_cbe_bits__PHI_TEMPORARY;
+  ap_private<512, false> llvm_cbe_shiftamt;
+  ap_private<512, false> llvm_cbe_shiftamt__PHI_TEMPORARY;
+  ap_private<512, false> llvm_cbe_bits2;
+  ap_private<512, false> llvm_cbe_mask;
+  ap_private<512, false> llvm_cbe_tmp__275;
+  ap_private<512, false> llvm_cbe_mask3;
+  ap_private<512, false> llvm_cbe_fres;
+  ap_private<512, false> llvm_cbe_fres4;
+  ap_private<512, false> llvm_cbe_count;
+  ap_private<512, false> llvm_cbe_count__PHI_TEMPORARY;
+  ap_private<512, false> llvm_cbe_val;
+  ap_private<512, false> llvm_cbe_val__PHI_TEMPORARY;
+  ap_private<512, false> llvm_cbe_rres;
+  ap_private<512, false> llvm_cbe_rres__PHI_TEMPORARY;
+  ap_private<512, false> llvm_cbe_decr;
+  ap_private<512, false> llvm_cbe_bit;
+  ap_private<512, false> llvm_cbe_rshift;
+  ap_private<512, false> llvm_cbe_lshift;
+  ap_private<512, false> llvm_cbe_addbit;
+  ap_private<512, false> llvm_cbe_part_select;
+  ap_private<512, false> llvm_cbe_part_select__PHI_TEMPORARY;
+  llvm_cbe_tmp = (ap_private<512, false> )((ap_private<512, false> )(unsigned int )llvm_cbe_High&4294967295U);
+  llvm_cbe_tmp1 = (ap_private<512, false> )((ap_private<512, false> )(unsigned int )llvm_cbe_Lo&4294967295U);
+  if ((((ap_private<512, false> )llvm_cbe_tmp) < ((ap_private<512, false> )llvm_cbe_tmp1))) {
+  llvm_cbe_rbits = (ap_private<512, false> )((ap_private<512, false> )llvm_cbe_tmp1) - ((ap_private<512, false> )llvm_cbe_tmp);
+  llvm_cbe_bits__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_rbits;   /* for PHI node */
+  llvm_cbe_shiftamt__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_tmp;   /* for PHI node */
+  llvm_cbe_fbits = (ap_private<512, false> )((ap_private<512, false> )llvm_cbe_tmp) - ((ap_private<512, false> )llvm_cbe_tmp1);
+  llvm_cbe_bits__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_fbits;   /* for PHI node */
+  llvm_cbe_shiftamt__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_tmp1;   /* for PHI node */
+  llvm_cbe_bits = (ap_private<512, false> )llvm_cbe_bits__PHI_TEMPORARY;
+  llvm_cbe_shiftamt = (ap_private<512, false> )llvm_cbe_shiftamt__PHI_TEMPORARY;
+  llvm_cbe_bits2 = (ap_private<512, false> )((ap_private<512, false> )llvm_cbe_bits) + ((ap_private<512, false> )((ap_private<512, false> )1u));
+  llvm_cbe_mask = (ap_private<512, false> )((ap_private<512, false> )-1ll) << llvm_cbe_bits2;
+  llvm_cbe_tmp__275 = (ap_private<512, false> )(((((ap_private<512, false> )llvm_cbe_bits2) >= ((ap_private<512, false> )((ap_private<512, false> )512u)))) ? ((ap_private<512, false> )((ap_private<512, false> )0u)) : ((ap_private<512, false> )llvm_cbe_mask));
+  llvm_cbe_mask3 = (ap_private<512, false> )llvm_cbe_tmp__275 ^ ((ap_private<512, false> )-1ll);
+  llvm_cbe_fres = (ap_private<512, false> )((ap_private<512, false> )(((ap_private<512, false> )llvm_cbe_Val) >> ((ap_private<512, false> )llvm_cbe_shiftamt)));
+  llvm_cbe_fres4 = (ap_private<512, false> )llvm_cbe_fres & llvm_cbe_mask3;
+  if ((((ap_private<512, false> )llvm_cbe_tmp) < ((ap_private<512, false> )llvm_cbe_tmp1))) {
+    llvm_cbe_count__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_bits2;   /* for PHI node */
+    llvm_cbe_val__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_fres4;   /* for PHI node */
+    llvm_cbe_rres__PHI_TEMPORARY = (ap_private<512, false> )((ap_private<512, false> )0u);   /* for PHI node */
+    llvm_cbe_part_select__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_fres4;   /* for PHI node */
+  llvm_cbe_count = (ap_private<512, false> )llvm_cbe_count__PHI_TEMPORARY;
+  llvm_cbe_val = (ap_private<512, false> )llvm_cbe_val__PHI_TEMPORARY;
+  llvm_cbe_rres = (ap_private<512, false> )llvm_cbe_rres__PHI_TEMPORARY;
+  llvm_cbe_decr = (ap_private<512, false> )((ap_private<512, false> )llvm_cbe_count) - ((ap_private<512, false> )((ap_private<512, false> )1u));
+  llvm_cbe_bit = (ap_private<512, false> )llvm_cbe_val & ((ap_private<512, false> )1u);
+  llvm_cbe_rshift = (ap_private<512, false> )((ap_private<512, false> )(((ap_private<512, false> )llvm_cbe_val) >> ((ap_private<512, false> )((ap_private<512, false> )1u))));
+  llvm_cbe_lshift = (ap_private<512, false> )llvm_cbe_rres << ((ap_private<512, false> )1u);
+  llvm_cbe_addbit = (ap_private<512, false> )llvm_cbe_lshift | llvm_cbe_bit;
+  if (((llvm_cbe_decr) == (((ap_private<512, false> )0u)))) {
+    llvm_cbe_part_select__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_addbit;   /* for PHI node */
+    llvm_cbe_count__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_decr;   /* for PHI node */
+    llvm_cbe_val__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_rshift;   /* for PHI node */
+    llvm_cbe_rres__PHI_TEMPORARY = (ap_private<512, false> )llvm_cbe_addbit;   /* for PHI node */
+  llvm_cbe_part_select = (ap_private<512, false> )llvm_cbe_part_select__PHI_TEMPORARY;

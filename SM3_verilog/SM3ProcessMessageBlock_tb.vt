@@ -1,0 +1,48 @@
+`timescale 1ns / 1ps
+
+module SM3ProcessMessageBlock_tb;
+
+reg  clk;
+reg  rst;
+reg  enable;
+reg  [511:0] messageBlock;
+reg  [255:0] V_i;
+
+wire [255:0] V_o;
+				 
+SM3ProcessMessageBlock SM3ProcessMessageBlock(clk,rst,enable,messageBlock,V_i,V_o);
+
+always #5 clk = ~clk;
+
+initial
+begin
+    clk = 1'b0;
+	 rst = 1'b0;
+	 enable = 1'b0;
+	 messageBlock = 512'b0;
+	 V_i[255:224] = 32'h7380166F;
+	 V_i[223:192] = 32'h4914B2B9;
+	 V_i[191:160] = 32'h172442D7;
+	 V_i[159:128] = 32'hDA8A0600;
+	 V_i[127:96]  = 32'hA96F30BC;
+	 V_i[95:64]   = 32'h163138AA;
+	 V_i[63:32]   = 32'hE38DEE4D;
+	 V_i[31:0]    = 32'hB0FB0E4E;	 
+
+	 #20
+	 rst = 1'b1;
+	 #10
+	 enable = 1'b1;
+	 messageBlock[511:448] = 64'h61626380_00000000;
+	 messageBlock[447:384] = 64'h00000000_00000000;
+	 messageBlock[383:320] = 64'h00000000_00000000;
+	 messageBlock[319:256] = 64'h00000000_00000000;
+	 messageBlock[255:192] = 64'h00000000_00000000;
+	 messageBlock[191:128] = 64'h00000000_00000000;
+	 messageBlock[127:64]  = 64'h00000000_00000000;
+	 messageBlock[63:0]    = 64'h00000000_00000018;
+	 
+	 #800
+	 $stop;
+end
+endmodule

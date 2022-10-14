@@ -1,0 +1,21 @@
+`timescale 1ns / 1ps
+
+module SM3ProcessMessageBlock_test
+
+reg  clk;
+reg  rst;
+reg  enable;
+reg  [511:0] messageBlock;
+reg  [511:0] V_i;
+
+wire [255:0] V_o;
+
+SM3ProcessMessageBlock SM3ProcessMessageBlock(clk,rst,enable,messageBlock,V_i,V_o);
+
+always #5 clk = ~clk;
+
+initial
+begin
+    
+end
+endmodule

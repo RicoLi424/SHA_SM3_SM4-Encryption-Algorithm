@@ -1,0 +1,3 @@
+`timescale 1 ns / 1 ps //时间精度和刻度
+`include "sm4_main.v"   //包含原文件
+module sm4_mai_tb;

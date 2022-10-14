@@ -1,0 +1,38 @@
+module SM3Calc(clk,rst,message,messageLen,digest);
+
+    input  clk,rst;
+    input  [4294967295:0]  message;   //该程序只考虑消息最大长度为2**32-1比特的情况
+    input  [63:0]          messageLen;
+    output [255:0]         digest;
+
+    wire   clk,rst;
+    wire   [4294967295:0]  message;
+    wire   [63:0]          messageLen;
+    reg    [255:0]         digest;
+
+    reg    [23:0]          n;
+    reg    [8:0]           remainder;
+	 reg    enable;
+    reg    [511:0]         messageBlock;
+	 reg    [255:0]         V_i;
+	 reg    [255:0]         IV;
+	 
+	 parameter IV = 256'h7380166F_4914B2B9_172442D7_DA8A0600_A96F30BC_163138AA_E38DEE4D_B0FB0E4E;
+	 
+    always@(posedge clk or negedge rst)
+	 begin
+	     if(!rst)
+		  begin
+		      digest = 256'd0;
+				
+				n = 1'd0;
+				remainder = 9'd0;
+				enable = 1'd0;
+				messageBlock = 512'd0;
+				V_i = IV;
+		  end
+		  
+	 end
+	 
+	 
+endmodule

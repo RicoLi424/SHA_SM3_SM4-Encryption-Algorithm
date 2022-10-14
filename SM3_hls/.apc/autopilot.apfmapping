@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="SM3.h" path="C:\Users\likangli\Desktop\lkl\SM234\SM3\SM3\SM3\src\SM3.h"/>
+    <originFiles name="SM3.c" path="C:\Users\likangli\Desktop\lkl\SM234\SM3\SM3\SM3\src\SM3.c"/>
+  </source>
+  <testbench>
+    <originFiles name="test_SM3.c" path="C:\Users\likangli\Desktop\lkl\SM234\SM3\SM3\SM3\test\test_SM3.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

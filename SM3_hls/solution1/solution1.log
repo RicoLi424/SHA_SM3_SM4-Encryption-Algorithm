@@ -1,0 +1,185 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7vx980t-ffg1930-2'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7vx980t-ffg1930-2'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7vx980t-ffg1930-2'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7vx980t-ffg1930-2'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7vx980t-ffg1930-2'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7vx980t-ffg1930-2'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7vx980t-ffg1930-2'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'SM3/src/SM3.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:16 . Memory (MB): peak = 184.145 ; gain = 92.500
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:16 . Memory (MB): peak = 184.145 ; gain = 92.500
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:17 . Memory (MB): peak = 184.145 ; gain = 92.500
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'P1' into 'processmessageblock' (SM3/src/SM3.c:136) automatically.
+INFO: [XFORM 203-602] Inlining function 'T' into 'processmessageblock' (SM3/src/SM3.c:172) automatically.
+INFO: [XFORM 203-602] Inlining function 'FF' into 'processmessageblock' (SM3/src/SM3.c:174) automatically.
+INFO: [XFORM 203-602] Inlining function 'GG' into 'processmessageblock' (SM3/src/SM3.c:175) automatically.
+INFO: [XFORM 203-602] Inlining function 'P0' into 'processmessageblock' (SM3/src/SM3.c:184) automatically.
+INFO: [XFORM 203-602] Inlining function 'initial' into 'SM3Calc' (SM3/src/SM3.c:232) automatically.
+WARNING: [SYNCHK 200-23] SM3/src/SM3.c:212: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:17 . Memory (MB): peak = 184.145 ; gain = 92.500
+INFO: [XFORM 203-602] Inlining function 'LeftRotate' into 'P1' (SM3/src/SM3.c:85) automatically.
+INFO: [XFORM 203-602] Inlining function 'LeftRotate' into 'P0' (SM3/src/SM3.c:75) automatically.
+INFO: [XFORM 203-602] Inlining function 'P1' into 'processmessageblock' (SM3/src/SM3.c:136) automatically.
+INFO: [XFORM 203-602] Inlining function 'T' into 'processmessageblock' (SM3/src/SM3.c:172) automatically.
+INFO: [XFORM 203-602] Inlining function 'FF' into 'processmessageblock' (SM3/src/SM3.c:174) automatically.
+INFO: [XFORM 203-602] Inlining function 'GG' into 'processmessageblock' (SM3/src/SM3.c:175) automatically.
+INFO: [XFORM 203-602] Inlining function 'P0' into 'processmessageblock' (SM3/src/SM3.c:184) automatically.
+INFO: [XFORM 203-602] Inlining function 'initial' into 'SM3Calc' (SM3/src/SM3.c:232) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SM3/src/SM3.c:172:21) to (SM3/src/SM3.c:167:22) in function 'processmessageblock'... converting 7 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SM3/src/SM3.c:9:30) to (SM3/src/SM3.c:17:1) in function 'LeftRotate'... converting 4 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'LeftRotate' into 'processmessageblock' (SM3/src/SM3.c:136) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'processmessageblock' (SM3/src/SM3.c:103)...10 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:18 . Memory (MB): peak = 184.145 ; gain = 92.500
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:18 . Memory (MB): peak = 184.145 ; gain = 92.500
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'SM3Calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'processmessageblock' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 18.557 seconds; current allocated memory: 112.961 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 4 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.242 seconds; current allocated memory: 113.735 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'SM3Calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.336 seconds; current allocated memory: 114.134 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.17 seconds; current allocated memory: 114.504 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'processmessageblock' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'processmessageblock_W' to 'processmessageblobkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'processmessageblock_W_s' to 'processmessageblocud' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'processmessageblock'.
+INFO: [HLS 200-111]  Elapsed time: 0.335 seconds; current allocated memory: 115.702 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'SM3Calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'SM3Calc/message' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'SM3Calc/messageLen' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'SM3Calc/digest' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'SM3Calc' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'SM3Calc_messageBlock' to 'SM3Calc_messageBldEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SM3Calc_intermediateHash' to 'SM3Calc_intermedieOg' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'SM3Calc'.
+INFO: [HLS 200-111]  Elapsed time: 1.073 seconds; current allocated memory: 116.823 MB.
+INFO: [RTMG 210-278] Implementing memory 'processmessageblobkb_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'processmessageblocud_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'SM3Calc_messageBldEe_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'SM3Calc_intermedieOg_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:05 ; elapsed = 00:00:23 . Memory (MB): peak = 188.828 ; gain = 97.184
+INFO: [VHDL 208-304] Generating VHDL RTL for SM3Calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for SM3Calc.
+INFO: [HLS 200-112] Total elapsed time: 23.096 seconds; peak allocated memory: 116.823 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7vx980t-ffg1930-2'
+INFO: [COSIM 212-47] Using Modelsim for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting Modelsim ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7vx980t-ffg1930-2'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************

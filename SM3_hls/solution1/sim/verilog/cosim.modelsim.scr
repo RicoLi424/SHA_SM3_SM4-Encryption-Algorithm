@@ -1,0 +1,67 @@
+# ==============================================================
+# Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+# Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+# ==============================================================
+onElabError {
+    set fl [open ".exit.err" w]
+    puts $fl "Elaboration errors in executing modelsim simulator"
+    close $fl
+    quit
+}
+onerror {
+    set fl [open ".exit.err" w]
+    puts $fl "Errors in executing modelsim simulator"
+    close $fl
+    quit
+}
+onbreak {
+    quit
+}
+
+if 0 {
+    vdel -all
+}
+
+set clibs_path C:/clibs
+if {[string match -nocase *windows* $tcl_platform(os)]} {
+    if {[string match *_64 [exec uname -m]]} {
+        set os "nt64"
+    } else {
+        set os "nt"
+    }
+} else {
+    if {[string match *_64 [exec uname -m]]} {
+        set os "lin64"
+    } else {
+        set os "lin"
+    }
+}
+regexp {vsim (.*) Simulator} [vsim -version] matchstring modelsim_version
+set libpath [file join $clibs_path questa $modelsim_version $os lib]
+if {[file exist [file join $libpath modelsim.ini]]} {
+    vmap -c -modelsimini [file join $libpath modelsim.ini]
+} else {
+    puts "WARNING: There is no IP libs for this version of ModelSim. If you may use cosim with IP, please make sure the IP libs have been pre-compiled."
+}
+
+vlib work
+vmap work work
+
+vlog -sv -work work "glbl.v"
+vlog -sv -work work "AESL_automem_digest.v"
+vlog -sv -work work "AESL_automem_message.v"
+vlog -sv -work work "processmessageblobkb.v"
+vlog -sv -work work "processmessageblock.v"
+vlog -sv -work work "processmessageblocud.v"
+vlog -sv -work work "SM3Calc.autotb.v"
+vlog -sv -work work "SM3Calc.v"
+vlog -sv -work work "SM3Calc_intermedieOg.v"
+vlog -sv -work work "SM3Calc_messageBldEe.v"
+
+vsim -debugDB -t 10ps -voptargs="+acc"  -L work -L unisims_ver -L xpm apatb_SM3Calc_top glbl -suppress 6630 -wlf SM3Calc.wlf 
+set WildcardFilter [lsearch -not -all -inline $WildcardFilter Parameter]
+add wave -r /*
+set StdArithNoWarnings 1
+set NumericStdNoWarnings 1
+run -all
+abort

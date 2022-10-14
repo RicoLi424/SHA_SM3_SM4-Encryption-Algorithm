@@ -1,0 +1,1015 @@
+Analysis & Synthesis report for SM3
+Sat May 08 18:59:13 2021
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |SM3Calc
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat May 08 18:59:12 2021           ;
+; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Standard Edition ;
+; Revision Name                   ; SM3                                             ;
+; Top-level Entity Name           ; SM3Calc                                         ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 6574                                            ;
+; Total pins                      ; 523                                             ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 0                                               ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGTFD9E5F35C7     ;                    ;
+; Top-level entity name                                                           ; SM3Calc            ; SM3                ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 3.57        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;  85.6%      ;
+;     Processor 3            ;  85.6%      ;
+;     Processor 4            ;  85.6%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                               ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                 ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------+---------+
+; SM3Calc.v                        ; yes             ; User Verilog HDL File  ; C:/Users/likangli/Desktop/SM3/SM3_2/SM3Calc.v                ;         ;
+; SM3ProcessMessageBlock.v         ; yes             ; User Verilog HDL File  ; C:/Users/likangli/Desktop/SM3/SM3_2/SM3ProcessMessageBlock.v ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 10001     ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 16898     ;
+;     -- 7 input functions                    ; 48        ;
+;     -- 6 input functions                    ; 2850      ;
+;     -- 5 input functions                    ; 2303      ;
+;     -- 4 input functions                    ; 700       ;
+;     -- <=3 input functions                  ; 10997     ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 6574      ;
+;                                             ;           ;
+; I/O pins                                    ; 523       ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 6574      ;
+; Total fan-out                               ; 84483     ;
+; Average fan-out                             ; 3.45      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                              ;
++------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node                           ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                      ; Entity Name            ; Library Name ;
++------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------+------------------------+--------------+
+; |SM3Calc                                             ; 16898 (2197)        ; 6574 (530)                ; 0                 ; 0          ; 523  ; 0            ; |SM3Calc                                                 ; SM3Calc                ; work         ;
+;    |SM3ProcessMessageBlock:SM3ProcessMessageBlock_0| ; 14701 (14701)       ; 6044 (6044)               ; 0                 ; 0          ; 0    ; 0            ; |SM3Calc|SM3ProcessMessageBlock:SM3ProcessMessageBlock_0 ; SM3ProcessMessageBlock ; work         ;
++------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------+------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                   ;
++-------------------------------------------------------------+----------------------------------------+
+; Register name                                               ; Reason for Removal                     ;
++-------------------------------------------------------------+----------------------------------------+
+; V_i[0,255]                                                  ; Stuck at GND due to stuck port data_in ;
+; V_i[252..254]                                               ; Stuck at VCC due to stuck port data_in ;
+; V_i[250,251]                                                ; Stuck at GND due to stuck port data_in ;
+; V_i[247..249]                                               ; Stuck at VCC due to stuck port data_in ;
+; V_i[237..246]                                               ; Stuck at GND due to stuck port data_in ;
+; V_i[236]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[235]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[233,234]                                                ; Stuck at VCC due to stuck port data_in ;
+; V_i[231,232]                                                ; Stuck at GND due to stuck port data_in ;
+; V_i[229,230]                                                ; Stuck at VCC due to stuck port data_in ;
+; V_i[228]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[224..227]                                               ; Stuck at VCC due to stuck port data_in ;
+; V_i[223]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[222]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[220,221]                                                ; Stuck at GND due to stuck port data_in ;
+; V_i[219]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[217,218]                                                ; Stuck at GND due to stuck port data_in ;
+; V_i[216]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[213..215]                                               ; Stuck at GND due to stuck port data_in ;
+; V_i[212]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[211]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[210]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[208,209]                                                ; Stuck at GND due to stuck port data_in ;
+; V_i[207]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[206]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[204,205]                                                ; Stuck at VCC due to stuck port data_in ;
+; V_i[202,203]                                                ; Stuck at GND due to stuck port data_in ;
+; V_i[201]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[200]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[199]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[198]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[195..197]                                               ; Stuck at VCC due to stuck port data_in ;
+; V_i[193,194]                                                ; Stuck at GND due to stuck port data_in ;
+; V_i[192]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[189..191]                                               ; Stuck at GND due to stuck port data_in ;
+; V_i[188]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[187]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[184..186]                                               ; Stuck at VCC due to stuck port data_in ;
+; V_i[182,183]                                                ; Stuck at GND due to stuck port data_in ;
+; V_i[181]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[179,180]                                                ; Stuck at GND due to stuck port data_in ;
+; V_i[178]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[175..177]                                               ; Stuck at GND due to stuck port data_in ;
+; V_i[174]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[170..173]                                               ; Stuck at GND due to stuck port data_in ;
+; V_i[169]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[168]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[166,167]                                                ; Stuck at VCC due to stuck port data_in ;
+; V_i[165]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[164]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[163]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[158..162]                                               ; Stuck at VCC due to stuck port data_in ;
+; V_i[157]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[155,156]                                                ; Stuck at VCC due to stuck port data_in ;
+; V_i[154]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[153]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[152]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[151]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[148..150]                                               ; Stuck at GND due to stuck port data_in ;
+; V_i[147]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[146]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[145]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[139..144]                                               ; Stuck at GND due to stuck port data_in ;
+; V_i[137,138]                                                ; Stuck at VCC due to stuck port data_in ;
+; V_i[128..136]                                               ; Stuck at GND due to stuck port data_in ;
+; V_i[127]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[126]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[125]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[124]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[123]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[121,122]                                                ; Stuck at GND due to stuck port data_in ;
+; V_i[120]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[119]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[117,118]                                                ; Stuck at VCC due to stuck port data_in ;
+; V_i[116]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[112..115]                                               ; Stuck at VCC due to stuck port data_in ;
+; V_i[110,111]                                                ; Stuck at GND due to stuck port data_in ;
+; V_i[108,109]                                                ; Stuck at VCC due to stuck port data_in ;
+; V_i[104..107]                                               ; Stuck at GND due to stuck port data_in ;
+; V_i[103]                                                    ; Stuck at VCC due to stuck port data_in ;
+; V_i[102]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[98..101]                                                ; Stuck at VCC due to stuck port data_in ;
+; V_i[93..97]                                                 ; Stuck at GND due to stuck port data_in ;
+; V_i[92]                                                     ; Stuck at VCC due to stuck port data_in ;
+; V_i[91]                                                     ; Stuck at GND due to stuck port data_in ;
+; V_i[89,90]                                                  ; Stuck at VCC due to stuck port data_in ;
+; V_i[86..88]                                                 ; Stuck at GND due to stuck port data_in ;
+; V_i[84,85]                                                  ; Stuck at VCC due to stuck port data_in ;
+; V_i[81..83]                                                 ; Stuck at GND due to stuck port data_in ;
+; V_i[80]                                                     ; Stuck at VCC due to stuck port data_in ;
+; V_i[78,79]                                                  ; Stuck at GND due to stuck port data_in ;
+; V_i[75..77]                                                 ; Stuck at VCC due to stuck port data_in ;
+; V_i[72..74]                                                 ; Stuck at GND due to stuck port data_in ;
+; V_i[71]                                                     ; Stuck at VCC due to stuck port data_in ;
+; V_i[70]                                                     ; Stuck at GND due to stuck port data_in ;
+; V_i[69]                                                     ; Stuck at VCC due to stuck port data_in ;
+; V_i[68]                                                     ; Stuck at GND due to stuck port data_in ;
+; V_i[67]                                                     ; Stuck at VCC due to stuck port data_in ;
+; V_i[66]                                                     ; Stuck at GND due to stuck port data_in ;
+; V_i[65]                                                     ; Stuck at VCC due to stuck port data_in ;
+; V_i[64]                                                     ; Stuck at GND due to stuck port data_in ;
+; V_i[61..63]                                                 ; Stuck at VCC due to stuck port data_in ;
+; V_i[58..60]                                                 ; Stuck at GND due to stuck port data_in ;
+; V_i[55..57]                                                 ; Stuck at VCC due to stuck port data_in ;
+; V_i[52..54]                                                 ; Stuck at GND due to stuck port data_in ;
+; V_i[50,51]                                                  ; Stuck at VCC due to stuck port data_in ;
+; V_i[49]                                                     ; Stuck at GND due to stuck port data_in ;
+; V_i[45..48]                                                 ; Stuck at VCC due to stuck port data_in ;
+; V_i[44]                                                     ; Stuck at GND due to stuck port data_in ;
+; V_i[41..43]                                                 ; Stuck at VCC due to stuck port data_in ;
+; V_i[39,40]                                                  ; Stuck at GND due to stuck port data_in ;
+; V_i[38]                                                     ; Stuck at VCC due to stuck port data_in ;
+; V_i[36,37]                                                  ; Stuck at GND due to stuck port data_in ;
+; V_i[34,35]                                                  ; Stuck at VCC due to stuck port data_in ;
+; V_i[33]                                                     ; Stuck at GND due to stuck port data_in ;
+; V_i[31,32]                                                  ; Stuck at VCC due to stuck port data_in ;
+; V_i[30]                                                     ; Stuck at GND due to stuck port data_in ;
+; V_i[28,29]                                                  ; Stuck at VCC due to stuck port data_in ;
+; V_i[24..27]                                                 ; Stuck at GND due to stuck port data_in ;
+; V_i[19..23]                                                 ; Stuck at VCC due to stuck port data_in ;
+; V_i[18]                                                     ; Stuck at GND due to stuck port data_in ;
+; V_i[16,17]                                                  ; Stuck at VCC due to stuck port data_in ;
+; V_i[12..15]                                                 ; Stuck at GND due to stuck port data_in ;
+; V_i[9..11]                                                  ; Stuck at VCC due to stuck port data_in ;
+; V_i[7,8]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[6]                                                      ; Stuck at VCC due to stuck port data_in ;
+; V_i[4,5]                                                    ; Stuck at GND due to stuck port data_in ;
+; V_i[1..3]                                                   ; Stuck at VCC due to stuck port data_in ;
+; messageBlock[8..248]                                        ; Stuck at GND due to stuck port data_in ;
+; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[0..24]   ; Stuck at GND due to stuck port data_in ;
+; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[0..31]   ; Stuck at GND due to stuck port data_in ;
+; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[0..31]  ; Stuck at GND due to stuck port data_in ;
+; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[0..31]  ; Stuck at GND due to stuck port data_in ;
+; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[0..31]  ; Stuck at GND due to stuck port data_in ;
+; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[0..31]  ; Stuck at GND due to stuck port data_in ;
+; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[0..31]  ; Stuck at GND due to stuck port data_in ;
+; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[8..31]  ; Stuck at GND due to stuck port data_in ;
+; messageBlock[249..255]                                      ; Stuck at GND due to stuck port data_in ;
+; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[25..31]  ; Stuck at GND due to stuck port data_in ;
+; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w_9[0..31]  ; Stuck at GND due to stuck port data_in ;
+; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w_10[0..31] ; Stuck at GND due to stuck port data_in ;
+; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w_8[0..31]  ; Stuck at GND due to stuck port data_in ;
+; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w_11[8..31] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 872                     ;                                        ;
++-------------------------------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                             ;
++-------------------+---------------------------+---------------------------------------------------------+
+; Register name     ; Reason for Removal        ; Registers Removed due to This Register                  ;
++-------------------+---------------------------+---------------------------------------------------------+
+; messageBlock[248] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[24]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[247] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[23]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[246] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[22]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[245] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[21]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[244] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[20]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[243] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[19]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[242] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[18]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[241] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[17]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[240] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[16]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[239] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[15]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[238] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[14]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[237] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[13]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[236] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[12]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[235] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[11]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[234] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[10]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[233] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[9]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[232] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[8]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[231] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[7]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[230] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[6]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[229] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[5]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[228] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[4]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[227] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[3]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[226] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[2]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[225] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[1]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[224] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[0]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[223] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[31]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[222] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[30]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[221] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[29]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[220] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[28]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[219] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[27]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[218] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[26]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[217] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[25]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[216] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[24]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[215] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[23]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[214] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[22]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[213] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[21]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[212] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[20]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[211] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[19]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[210] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[18]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[209] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[17]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[208] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[16]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[207] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[15]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[206] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[14]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[205] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[13]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[204] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[12]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[203] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[11]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[202] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[10]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[201] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[9]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[200] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[8]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[199] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[7]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[198] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[6]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[197] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[5]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[196] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[4]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[195] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[3]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[194] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[2]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[193] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[1]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[192] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w9[0]   ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[191] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[31] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[190] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[30] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[189] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[29] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[188] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[28] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[187] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[27] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[186] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[26] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[185] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[25] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[184] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[24] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[183] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[23] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[182] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[22] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[181] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[21] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[180] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[20] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[179] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[19] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[178] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[18] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[177] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[17] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[176] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[16] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[175] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[15] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[174] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[14] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[173] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[13] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[172] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[12] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[171] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[11] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[170] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[10] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[169] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[9]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[168] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[8]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[167] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[7]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[166] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[6]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[165] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[5]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[164] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[4]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[163] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[3]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[162] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[2]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[161] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[1]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[160] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w10[0]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[159] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[31] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[158] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[30] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[157] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[29] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[156] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[28] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[155] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[27] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[154] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[26] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[153] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[25] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[152] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[24] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[151] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[23] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[150] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[22] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[149] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[21] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[148] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[20] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[147] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[19] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[146] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[18] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[145] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[17] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[144] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[16] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[143] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[15] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[142] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[14] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[141] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[13] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[140] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[12] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[139] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[11] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[138] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[10] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[137] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[9]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[136] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[8]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[135] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[7]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[134] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[6]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[133] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[5]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[132] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[4]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[131] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[3]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[130] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[2]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[129] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[1]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[128] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w11[0]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[127] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[31] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[126] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[30] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[125] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[29] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[124] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[28] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[123] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[27] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[122] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[26] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[121] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[25] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[120] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[24] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[119] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[23] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[118] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[22] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[117] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[21] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[116] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[20] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[115] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[19] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[114] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[18] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[113] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[17] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[112] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[16] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[111] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[15] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[110] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[14] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[109] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[13] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[108] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[12] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[107] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[11] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[106] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[10] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[105] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[9]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[104] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[8]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[103] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[7]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[102] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[6]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[101] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[5]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[100] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[4]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[99]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[3]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[98]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[2]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[97]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[1]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[96]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w12[0]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[95]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[31] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[94]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[30] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[93]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[29] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[92]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[28] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[91]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[27] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[90]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[26] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[89]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[25] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[88]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[24] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[87]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[23] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[86]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[22] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[85]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[21] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[84]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[20] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[83]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[19] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[82]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[18] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[81]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[17] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[80]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[16] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[79]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[15] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[78]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[14] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[77]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[13] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[76]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[12] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[75]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[11] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[74]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[10] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[73]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[9]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[72]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[8]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[71]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[7]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[70]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[6]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[69]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[5]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[68]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[4]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[67]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[3]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[66]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[2]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[65]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[1]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[64]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w13[0]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[63]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[31] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[62]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[30] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[61]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[29] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[60]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[28] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[59]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[27] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[58]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[26] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[57]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[25] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[56]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[24] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[55]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[23] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[54]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[22] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[53]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[21] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[52]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[20] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[51]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[19] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[50]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[18] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[49]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[17] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[48]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[16] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[47]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[15] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[46]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[14] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[45]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[13] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[44]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[12] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[43]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[11] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[42]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[10] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[41]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[9]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[40]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[8]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[39]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[7]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[38]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[6]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[37]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[5]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[36]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[4]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[35]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[3]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[34]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[2]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[33]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[1]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[32]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w14[0]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[31]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[31] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[30]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[30] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[29]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[29] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[28]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[28] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[27]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[27] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[26]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[26] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[25]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[25] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[24]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[24] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[23]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[23] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[22]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[22] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[21]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[21] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[20]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[20] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[19]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[19] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[18]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[18] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[17]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[17] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[16]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[16] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[15]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[15] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[14]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[14] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[13]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[13] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[12]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[12] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[11]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[11] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[10]  ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[10] ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[9]   ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[9]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[8]   ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w15[8]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[255] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[31]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[254] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[30]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[253] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[29]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[252] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[28]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[251] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[27]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[250] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[26]  ;
+;                   ; due to stuck port data_in ;                                                         ;
+; messageBlock[249] ; Stuck at GND              ; SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|w8[25]  ;
+;                   ; due to stuck port data_in ;                                                         ;
++-------------------+---------------------------+---------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 6574  ;
+; Number of registers using Synchronous Clear  ; 59    ;
+; Number of registers using Synchronous Load   ; 94    ;
+; Number of registers using Asynchronous Clear ; 1318  ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 6570  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; 65:1               ; 32 bits   ; 1376 LEs      ; 64 LEs               ; 1312 LEs               ; Yes        ; |SM3Calc|SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|A[28] ;
+; 65:1               ; 32 bits   ; 1376 LEs      ; 1376 LEs             ; 0 LEs                  ; Yes        ; |SM3Calc|SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|E[3]  ;
+; 62:1               ; 32 bits   ; 1312 LEs      ; 992 LEs              ; 320 LEs                ; No         ; |SM3Calc|SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|Add10 ;
+; 62:1               ; 32 bits   ; 1312 LEs      ; 1312 LEs             ; 0 LEs                  ; No         ; |SM3Calc|SM3ProcessMessageBlock:SM3ProcessMessageBlock_0|Add10 ;
+; 4:1                ; 249 bits  ; 498 LEs       ; 498 LEs              ; 0 LEs                  ; No         ; |SM3Calc|ShiftLeft0                                            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |SM3Calc|ShiftLeft0                                            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |SM3Calc|ShiftLeft0                                            ;
+; 4:1                ; 228 bits  ; 456 LEs       ; 456 LEs              ; 0 LEs                  ; No         ; |SM3Calc|ShiftLeft0                                            ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |SM3Calc|ShiftLeft0                                            ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |SM3Calc|ShiftLeft0                                            ;
+; 4:1                ; 144 bits  ; 288 LEs       ; 288 LEs              ; 0 LEs                  ; No         ; |SM3Calc|ShiftLeft0                                            ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |SM3Calc|ShiftLeft0                                            ;
+; 5:1                ; 64 bits   ; 192 LEs       ; 128 LEs              ; 64 LEs                 ; No         ; |SM3Calc|ShiftLeft0                                            ;
+; 5:1                ; 64 bits   ; 192 LEs       ; 192 LEs              ; 0 LEs                  ; No         ; |SM3Calc|ShiftLeft0                                            ;
+; 8:1                ; 48 bits   ; 240 LEs       ; 240 LEs              ; 0 LEs                  ; No         ; |SM3Calc|ShiftLeft0                                            ;
+; 11:1               ; 12 bits   ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; No         ; |SM3Calc|ShiftLeft0                                            ;
+; 14:1               ; 3 bits    ; 27 LEs        ; 27 LEs               ; 0 LEs                  ; No         ; |SM3Calc|ShiftLeft0                                            ;
+; 256:1              ; 8 bits    ; 1360 LEs      ; 1008 LEs             ; 352 LEs                ; Yes        ; |SM3Calc|j[1]                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |SM3Calc                                                                                                                                                                                                                             ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Parameter Name ; Value                                                                                                                                                                                                                                                            ; Type            ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; IV             ; 0111001110000000000101100110111101001001000101001011001010111001000101110010010001000010110101111101101010001010000001100000000010101001011011110011000010111100000101100011000100111000101010101110001110001101111011100100110110110000111110110000111001001110 ; Unsigned Binary ;
+; char           ; 10000000                                                                                                                                                                                                                                                         ; Unsigned Binary ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 6574                        ;
+;     CLR               ; 4                           ;
+;     ENA               ; 5256                        ;
+;     ENA CLR           ; 1161                        ;
+;     ENA CLR SCLR      ; 59                          ;
+;     ENA CLR SLD       ; 94                          ;
+; arriav_lcell_comb     ; 16898                       ;
+;     arith             ; 4814                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1548                        ;
+;         2 data inputs ; 1695                        ;
+;         3 data inputs ; 1474                        ;
+;         4 data inputs ; 96                          ;
+;     extend            ; 48                          ;
+;         7 data inputs ; 48                          ;
+;     normal            ; 11044                       ;
+;         1 data inputs ; 103                         ;
+;         2 data inputs ; 2694                        ;
+;         3 data inputs ; 2490                        ;
+;         4 data inputs ; 604                         ;
+;         5 data inputs ; 2303                        ;
+;         6 data inputs ; 2850                        ;
+;     shared            ; 992                         ;
+;         2 data inputs ; 248                         ;
+;         3 data inputs ; 744                         ;
+; boundary_port         ; 523                         ;
+;                       ;                             ;
+; Max LUT depth         ; 16.00                       ;
+; Average LUT depth     ; 8.58                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:02:47     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
+    Info: Processing started: Sat May 08 18:56:10 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SM3 -c SM3
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file sm3calc.v
+    Info (12023): Found entity 1: SM3Calc File: C:/Users/likangli/Desktop/SM3/SM3_2/SM3Calc.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sm3processmessageblock.v
+    Info (12023): Found entity 1: SM3ProcessMessageBlock File: C:/Users/likangli/Desktop/SM3/SM3_2/SM3ProcessMessageBlock.v Line: 1
+Info (12127): Elaborating entity "SM3Calc" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at SM3Calc.v(49): truncated value with size 10 to match size of target (8) File: C:/Users/likangli/Desktop/SM3/SM3_2/SM3Calc.v Line: 49
+Info (12128): Elaborating entity "SM3ProcessMessageBlock" for hierarchy "SM3ProcessMessageBlock:SM3ProcessMessageBlock_0" File: C:/Users/likangli/Desktop/SM3/SM3_2/SM3Calc.v Line: 42
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/likangli/Desktop/SM3/SM3_2/output_files/SM3.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 18588 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 267 input pins
+    Info (21059): Implemented 256 output pins
+    Info (21061): Implemented 18065 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 5002 megabytes
+    Info: Processing ended: Sat May 08 18:59:13 2021
+    Info: Elapsed time: 00:03:03
+    Info: Total CPU time (on all processors): 00:03:30
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/likangli/Desktop/SM3/SM3_2/output_files/SM3.map.smsg.
+
+

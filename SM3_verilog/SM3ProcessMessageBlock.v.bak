@@ -1,0 +1,5 @@
+module SM3ProcessMessageBlock(clk,rst,message,messageLen,digest);
+
+input clk,rst;
+input [511:0] message;
+input [63:0] messageLen;

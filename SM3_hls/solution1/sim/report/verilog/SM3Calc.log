@@ -1,0 +1,224 @@
+INFO: [COSIM-47] Using Modelsim for RTL simulation.
+INFO: [COSIM-14] Instrumenting C test bench ...
+   Build using "C:/Xilinx/Vivado/2019.1/msys64/mingw64/bin/g++"
+   Compiling apatb_SM3Calc.cpp
+   Compiling (apcc) SM3.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user '19151' on host '赵书�?' (Windows NT_amd64 version 6.2) on Sat Mar 13 22:44:51 +0800 2021
+INFO: [HLS 200-10] In directory 'D:/vivado/sm3/hls_prj/SM3/SM3/solution1/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) test_SM3.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user '19151' on host '赵书�?' (Windows NT_amd64 version 6.2) on Sat Mar 13 22:45:10 +0800 2021
+INFO: [HLS 200-10] In directory 'D:/vivado/sm3/hls_prj/SM3/SM3/solution1/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Generating cosim.tv.exe
+INFO: [COSIM-302] Starting C TB testing ... 
+INFO: [COSIM-333] Generating C post check test bench ...
+INFO: [COSIM-12] Generating RTL test bench ...
+INFO: [COSIM-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM-323] Starting verilog simulation. 
+INFO: [COSIM-15] Starting Modelsim ...
+INFO: [COSIM-316] Starting C post checking ...
+message:
+0000000000000000000000000000000000000000000000000000000000616263
+messageLen:
+18
+61626380
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000018
+digest:
+66c7f0f4
+62eeedd9
+d1f2d46b
+dc10e4e2
+4167c487
+5cf2f7a2
+297da02b
+8f4ba8e0
+
+Reading C:/intelFPGA/17.1/modelsim_ase/tcl/vsim/pref.tcl
+
+# 10.5b
+
+# do cosim.modelsim.scr
+# 
+#     set fl [open ".exit.err" w]
+#     puts $fl "Elaboration errors in executing modelsim simulator"
+#     close $fl
+#     quit
+# 
+# C:/clibs
+# nt64
+# 1
+# C:/clibs/questa/10.5b/nt64/lib
+WARNING: There is no IP libs for this version of ModelSim. If you may use cosim with IP, please make sure the IP libs have been pre-compiled.
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Copying C:/intelFPGA/17.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:45:37 on Mar 13,2021
+# vlog -sv -work work glbl.v 
+# -- Compiling module glbl
+# 
+# Top level modules:
+# 	glbl
+# End time: 22:45:37 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:45:38 on Mar 13,2021
+# vlog -sv -work work AESL_automem_digest.v 
+# -- Compiling module AESL_automem_digest
+# 
+# Top level modules:
+# 	AESL_automem_digest
+# End time: 22:45:38 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:45:38 on Mar 13,2021
+# vlog -sv -work work AESL_automem_message.v 
+# -- Compiling module AESL_automem_message
+# 
+# Top level modules:
+# 	AESL_automem_message
+# End time: 22:45:39 on Mar 13,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:45:39 on Mar 13,2021
+# vlog -sv -work work processmessageblobkb.v 
+# -- Compiling module processmessageblobkb_ram
+# -- Compiling module processmessageblobkb
+# 
+# Top level modules:
+# 	processmessageblobkb
+# End time: 22:45:39 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:45:40 on Mar 13,2021
+# vlog -sv -work work processmessageblock.v 
+# -- Compiling module processmessageblock
+# 
+# Top level modules:
+# 	processmessageblock
+# End time: 22:45:40 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:45:40 on Mar 13,2021
+# vlog -sv -work work processmessageblocud.v 
+# -- Compiling module processmessageblocud_ram
+# -- Compiling module processmessageblocud
+# 
+# Top level modules:
+# 	processmessageblocud
+# End time: 22:45:40 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:45:41 on Mar 13,2021
+# vlog -sv -work work SM3Calc.autotb.v 
+# -- Compiling module apatb_SM3Calc_top
+# 
+# Top level modules:
+# 	apatb_SM3Calc_top
+# End time: 22:45:41 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:45:41 on Mar 13,2021
+# vlog -sv -work work SM3Calc.v 
+# -- Compiling module SM3Calc
+# 
+# Top level modules:
+# 	SM3Calc
+# End time: 22:45:41 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:45:42 on Mar 13,2021
+# vlog -sv -work work SM3Calc_intermedieOg.v 
+# -- Compiling module SM3Calc_intermedieOg_ram
+# -- Compiling module SM3Calc_intermedieOg
+# 
+# Top level modules:
+# 	SM3Calc_intermedieOg
+# End time: 22:45:42 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:45:43 on Mar 13,2021
+# vlog -sv -work work SM3Calc_messageBldEe.v 
+# -- Compiling module SM3Calc_messageBldEe_ram
+# -- Compiling module SM3Calc_messageBldEe
+# 
+# Top level modules:
+# 	SM3Calc_messageBldEe
+# End time: 22:45:43 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -debugDB -t 10ps -voptargs=""+acc"" -L work -L unisims_ver -L xpm apatb_SM3Calc_top glbl -suppress 6630 -wlf SM3Calc.wlf 
+# Start time: 22:45:43 on Mar 13,2021
+# Loading sv_std.std
+# Loading work.apatb_SM3Calc_top
+# Loading work.SM3Calc
+# Loading work.SM3Calc_messageBldEe
+# Loading work.SM3Calc_messageBldEe_ram
+# Loading work.SM3Calc_intermedieOg
+# Loading work.SM3Calc_intermedieOg_ram
+# Loading work.processmessageblock
+# Loading work.processmessageblobkb
+# Loading work.processmessageblobkb_ram
+# Loading work.processmessageblocud
+# Loading work.processmessageblocud_ram
+# Loading work.AESL_automem_message
+# Loading work.AESL_automem_digest
+# Loading work.glbl
+# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# It appears vopt was not run with -debugdb option on this design.
+# Advanced Causality and Schematic debug features will not be available.
+# Variable Constant Generic SpecParam Memory Assertion Cover Endpoint ScVariable CellInternal ImmediateAssert VHDLFile
+# 1
+# 1
+# ////////////////////////////////////////////////////////////////////////////////////
+# // Inter-Transaction Progress: Completed Transaction / Total Transaction
+# // Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+# //
+# // RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+# ////////////////////////////////////////////////////////////////////////////////////
+# // RTL Simulation : 0 / 1 [0.00%] @ "12500"
+# // RTL Simulation : 1 / 1 [100.00%] @ "625500"
+# ////////////////////////////////////////////////////////////////////////////////////
+# ** Note: $finish    : SM3Calc.autotb.v(325)
+#    Time: 6295 ns  Iteration: 1  Instance: /apatb_SM3Calc_top
+# End time: 22:45:44 on Mar 13,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+message:
+0000000000000000000000000000000000000000000000000000000000616263
+messageLen:
+18
+digest:
+66c7f0f4
+62eeedd9
+d1f2d46b
+dc10e4e2
+4167c487
+5cf2f7a2
+297da02b
+8f4ba8e0
+
+INFO: [COSIM-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.

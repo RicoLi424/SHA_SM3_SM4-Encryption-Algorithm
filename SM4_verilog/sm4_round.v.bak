@@ -1,0 +1,95 @@
+module	sm4_round (
+					kgen_en			,	//1:Round Key generator; 0:Crypto processing;
+
+					x0_in			,
+					x1_in			,
+					x2_in			,
+					x3_in			,
+	
+					rkey_in			,
+
+					x4_out
+				  );
+
+
+input			kgen_en			;	//1:Round Key generator; 0:Crypto processing;
+
+input	[ 31:0]	x0_in			;
+input	[ 31:0]	x1_in			;
+input	[ 31:0]	x2_in			;
+input	[ 31:0]	x3_in			;
+
+input	[ 31:0]	rkey_in			;
+
+output	[ 31:0]	x4_out			;	//Data output,32-bit;
+
+//-----------------------------------------------------------
+//Flow controller
+//-----------------------------------------------------------
+wire	[ 31:0]	x0_s0 			;
+wire	[ 31:0]	x0_s1 			;
+wire	[ 31:0]	x0_s2 			;
+
+wire	[  7:0]	x00_sr  		;
+wire	[  7:0]	x01_sr  		;
+wire	[  7:0]	x02_sr  		;
+wire	[  7:0]	x03_sr  		;
+
+wire	[  7:0]	x00_sbox		;
+wire	[  7:0]	x01_sbox		;
+wire	[  7:0]	x02_sbox		;
+wire	[  7:0]	x03_sbox		;
+
+//-----------------------------------
+//Get : X1 ^ X2 ^ X3 ^ RK
+
+assign	x0_s0  = x1_in ^ x2_in ^ x3_in ^ rkey_in;
+
+//-----------------------------------
+//Non-Linear Transfrom t : use 4 sbox;
+assign	x00_sr = x0_s0[31:24];
+assign	x01_sr = x0_s0[23:16];
+assign	x02_sr = x0_s0[15: 8];
+assign	x03_sr = x0_s0[ 7: 0];
+
+sm4_sbox u_sbox0 (.data_in (x00_sr	),	.data_out (x00_sbox	));
+sm4_sbox u_sbox1 (.data_in (x01_sr	),	.data_out (x01_sbox	));
+sm4_sbox u_sbox2 (.data_in (x02_sr	),	.data_out (x02_sbox	));
+sm4_sbox u_sbox3 (.data_in (x03_sr	),	.data_out (x03_sbox	));
+
+assign	x0_s1 = {x00_sbox,x01_sbox,x02_sbox,x03_sbox};
+
+//-----------------------------------
+//Liear Transfrom L
+assign	x0_s2 = kgen_en ? trans_l_key(x0_s1)
+			   		    : trans_l_dat(x0_s1);
+
+//-----------------------------------
+//Data out
+assign	x4_out = x0_s2 ^ x0_in ;
+
+//-----------------------------------------------------------
+//Generic Functions
+//-----------------------------------------------------------
+//linear Transform L for data
+//C=L(B)=B^(B<<<2)^(B<<<10)^(B<<<18)^(B<<<24);
+
+function [31:0] trans_l_dat;
+	input  [31:0] data_in;
+	trans_l_dat  = data_in[31:0] ^ ({data_in[29:0],data_in[31:30]}) 
+								 ^ ({data_in[21:0],data_in[31:22]}) 
+								 ^ ({data_in[13:0],data_in[31:14]})
+								 ^ ({data_in[ 7:0],data_in[31: 8]});	
+endfunction
+
+//linear Transform L for key
+//C=L(B)=B^(B<<<13)^(B<<<23);
+
+function [31:0] trans_l_key;
+	input  [31:0] data_in;
+	trans_l_key  = data_in[31:0] ^ ({data_in[18:0],data_in[31:19]}) 
+								 ^ ({data_in[ 8:0],data_in[31: 9]});	
+endfunction
+
+
+endmodule

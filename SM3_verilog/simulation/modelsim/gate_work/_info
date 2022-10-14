@@ -1,0 +1,56 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/FPGA/SM3_2/simulation/modelsim
+vSM3Calc
+!s110 1613743313
+!i10b 1
+!s100 lJi1;P3WCJ<2So@Wcd<jZ3
+Ic2OA;mNZP1D`F;n?`jKEU2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1613743095
+8SM3.vo
+FSM3.vo
+L0 31
+Z2 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1613743307.000000
+!s107 SM3.vo|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|SM3.vo|
+!i113 1
+Z3 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+.
+Z4 tCvgOpt 0
+n@s@m3@calc
+vSM3Calc_tb
+!s110 1613743314
+!i10b 1
+!s100 cH>aJh]O5PJWSoG9@^XOh2
+IzaGa=i=jm<m:9gP7]8n_c0
+R1
+R0
+w1613723746
+8D:/FPGA/SM3_2/SM3Calc_tb.vt
+FD:/FPGA/SM3_2/SM3Calc_tb.vt
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1613743314.000000
+!s107 D:/FPGA/SM3_2/SM3Calc_tb.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/FPGA/SM3_2|D:/FPGA/SM3_2/SM3Calc_tb.vt|
+!i113 1
+R3
+!s92 -vlog01compat -work work +incdir+D:/FPGA/SM3_2
+R4
+n@s@m3@calc_tb

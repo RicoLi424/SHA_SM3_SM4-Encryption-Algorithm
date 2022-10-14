@@ -1,0 +1,184 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'SM3Calc'" level="0">
+<item name = "Date">Sat Mar 13 22:42:58 2021
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">SM3</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">virtex7</item>
+<item name = "Target device">xc7vx980t-ffg1930-2</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 7.197, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">611, 611, 611, 611, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_processmessageblock_fu_297">processmessageblock, 507, 507, 507, 507, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">64, 64, 2, -, -, 32, no</column>
+<column name="- Loop 2">16, 16, 1, -, -, 16, no</column>
+<column name="- Loop 3">16, 16, 2, -, -, 8, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 17400, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">3, -, 875, 2449, 0</column>
+<column name="Memory">2, -, 64, 8, 0</column>
+<column name="Multiplexer">-, -, -, 316, -</column>
+<column name="Register">-, -, 1066, -, -</column>
+<specialColumn name="Available">3000, 3600, 1224000, 612000, 0</specialColumn>
+<specialColumn name="Utilization (%)">~0, 0, ~0, 3, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="grp_processmessageblock_fu_297">processmessageblock, 3, 0, 875, 2449, 0</column>
+</table>
+</item>
+<item name = "DSP48E"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="intermediateHash_U">SM3Calc_intermedieOg, 2, 0, 0, 0, 8, 32, 1, 256</column>
+<column name="messageBlock_U">SM3Calc_messageBldEe, 0, 64, 8, 0, 16, 32, 1, 512</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="i_6_fu_528_p2">+, 0, 0, 15, 5, 1</column>
+<column name="i_7_fu_664_p2">+, 0, 0, 13, 4, 1</column>
+<column name="i_fu_309_p2">+, 0, 0, 15, 6, 1</column>
+<column name="sub_ln216_fu_330_p2">-, 0, 0, 18, 11, 10</column>
+<column name="sub_ln224_1_fu_587_p2">-, 0, 0, 17, 10, 10</column>
+<column name="sub_ln224_2_fu_616_p2">-, 0, 0, 17, 9, 10</column>
+<column name="sub_ln224_fu_575_p2">-, 0, 0, 17, 10, 10</column>
+<column name="and_ln212_1_fu_504_p2">and, 0, 0, 512, 512, 512</column>
+<column name="and_ln212_2_fu_510_p2">and, 0, 0, 512, 512, 512</column>
+<column name="and_ln212_fu_492_p2">and, 0, 0, 512, 512, 512</column>
+<column name="p_Result_s_fu_642_p2">and, 0, 0, 512, 512, 512</column>
+<column name="icmp_ln210_fu_303_p2">icmp, 0, 0, 11, 6, 7</column>
+<column name="icmp_ln212_fu_390_p2">icmp, 0, 0, 11, 8, 8</column>
+<column name="icmp_ln222_fu_522_p2">icmp, 0, 0, 11, 5, 6</column>
+<column name="icmp_ln224_fu_552_p2">icmp, 0, 0, 13, 9, 9</column>
+<column name="icmp_ln236_fu_658_p2">icmp, 0, 0, 11, 4, 5</column>
+<column name="lshr_ln212_fu_486_p2">lshr, 0, 0, 2171, 2, 512</column>
+<column name="lshr_ln224_1_fu_636_p2">lshr, 0, 0, 2171, 2, 512</column>
+<column name="lshr_ln224_fu_630_p2">lshr, 0, 0, 2171, 512, 512</column>
+<column name="or_ln212_fu_384_p2">or, 0, 0, 8, 8, 3</column>
+<column name="or_ln224_fu_546_p2">or, 0, 0, 9, 9, 5</column>
+<column name="p_Result_1_fu_516_p2">or, 0, 0, 512, 512, 512</column>
+<column name="select_ln212_1_fu_422_p3">select, 0, 0, 10, 1, 10</column>
+<column name="select_ln212_2_fu_430_p3">select, 0, 0, 10, 1, 10</column>
+<column name="select_ln212_3_fu_472_p3">select, 0, 0, 512, 1, 512</column>
+<column name="select_ln212_fu_414_p3">select, 0, 0, 10, 1, 10</column>
+<column name="select_ln224_1_fu_601_p3">select, 0, 0, 512, 1, 512</column>
+<column name="select_ln224_2_fu_608_p3">select, 0, 0, 10, 1, 10</column>
+<column name="select_ln224_fu_593_p3">select, 0, 0, 10, 1, 10</column>
+<column name="pack_fu_340_p2">shl, 0, 0, 2171, 512, 512</column>
+<column name="shl_ln212_1_fu_480_p2">shl, 0, 0, 2171, 2, 512</column>
+<column name="shl_ln212_fu_456_p2">shl, 0, 0, 2171, 512, 512</column>
+<column name="xor_ln212_1_fu_438_p2">xor, 0, 0, 10, 10, 9</column>
+<column name="xor_ln212_2_fu_498_p2">xor, 0, 0, 512, 2, 512</column>
+<column name="xor_ln212_fu_408_p2">xor, 0, 0, 10, 10, 9</column>
+<column name="xor_ln218_fu_346_p2">xor, 0, 0, 9, 9, 2</column>
+<column name="xor_ln224_fu_581_p2">xor, 0, 0, 10, 10, 9</column>
+<column name="xor_ln238_fu_674_p2">xor, 0, 0, 3, 3, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">53, 12, 1, 12</column>
+<column name="i_0_reg_263">9, 2, 6, 12</column>
+<column name="i_1_reg_274">9, 2, 5, 10</column>
+<column name="i_3_reg_285">9, 2, 4, 8</column>
+<column name="intermediateHash_address0">38, 7, 3, 21</column>
+<column name="intermediateHash_address1">33, 6, 3, 18</column>
+<column name="intermediateHash_ce0">15, 3, 1, 3</column>
+<column name="intermediateHash_ce1">15, 3, 1, 3</column>
+<column name="intermediateHash_d0">33, 6, 32, 192</column>
+<column name="intermediateHash_d1">33, 6, 32, 192</column>
+<column name="intermediateHash_we0">15, 3, 1, 3</column>
+<column name="intermediateHash_we1">15, 3, 1, 3</column>
+<column name="messageBlock_address0">15, 3, 4, 12</column>
+<column name="messageBlock_ce0">15, 3, 1, 3</column>
+<column name="p_Val2_2_reg_251">9, 2, 512, 1024</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">11, 0, 11, 0</column>
+<column name="grp_processmessageblock_fu_297_ap_start_reg">1, 0, 1, 0</column>
+<column name="i_0_reg_263">6, 0, 6, 0</column>
+<column name="i_1_reg_274">5, 0, 5, 0</column>
+<column name="i_3_reg_285">4, 0, 4, 0</column>
+<column name="i_7_reg_737">4, 0, 4, 0</column>
+<column name="i_reg_700">6, 0, 6, 0</column>
+<column name="p_Result_3_reg_715">512, 0, 512, 0</column>
+<column name="p_Val2_2_reg_251">512, 0, 512, 0</column>
+<column name="trunc_ln212_reg_710">5, 0, 5, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, SM3Calc, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, SM3Calc, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, SM3Calc, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, SM3Calc, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, SM3Calc, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, SM3Calc, return value</column>
+<column name="message_address0">out, 5, ap_memory, message, array</column>
+<column name="message_ce0">out, 1, ap_memory, message, array</column>
+<column name="message_q0">in, 8, ap_memory, message, array</column>
+<column name="messageLen">in, 8, ap_none, messageLen, scalar</column>
+<column name="digest_address0">out, 3, ap_memory, digest, array</column>
+<column name="digest_ce0">out, 1, ap_memory, digest, array</column>
+<column name="digest_we0">out, 1, ap_memory, digest, array</column>
+<column name="digest_d0">out, 32, ap_memory, digest, array</column>
+</table>
+</item>
+</section>
+</profile>

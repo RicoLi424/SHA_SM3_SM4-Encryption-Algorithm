@@ -1,0 +1,20 @@
+Fitter Status : Successful - Fri Feb 19 21:56:07 2021
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Standard Edition
+Revision Name : SM3
+Top-level Entity Name : SM3Calc
+Family : Cyclone V
+Device : 5CGTFD9E5F35C7
+Timing Models : Final
+Logic utilization (in ALMs) : 11,123 / 113,560 ( 10 % )
+Total registers : 7215
+Total pins : 523 / 616 ( 85 % )
+Total virtual pins : 0
+Total block memory bits : 0 / 12,492,800 ( 0 % )
+Total RAM Blocks : 0 / 1,220 ( 0 % )
+Total DSP Blocks : 0 / 342 ( 0 % )
+Total HSSI RX PCSs : 0 / 12 ( 0 % )
+Total HSSI PMA RX Deserializers : 0 / 12 ( 0 % )
+Total HSSI TX PCSs : 0 / 12 ( 0 % )
+Total HSSI PMA TX Serializers : 0 / 12 ( 0 % )
+Total PLLs : 0 / 20 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

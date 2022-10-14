@@ -1,0 +1,99 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/likangli/Desktop/lkl/SM234/SM4/verilog/simulation/modelsim
+vsm4_main
+Z1 !s110 1612930412
+!i10b 1
+!s100 M_jd<=Mi6`B6LG[k@1>oD2
+IiQn1n20mGCZ5:H?iEGW:m3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1612927898
+8C:/Users/likangli/Desktop/lkl/SM234/SM4/verilog/sm4_main.v
+FC:/Users/likangli/Desktop/lkl/SM234/SM4/verilog/sm4_main.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1612930412.000000
+!s107 C:/Users/likangli/Desktop/lkl/SM234/SM4/verilog/sm4_main.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/likangli/Desktop/lkl/SM234/SM4/verilog|C:/Users/likangli/Desktop/lkl/SM234/SM4/verilog/sm4_main.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+C:/Users/likangli/Desktop/lkl/SM234/SM4/verilog
+Z7 tCvgOpt 0
+vsm4_main_tb
+R1
+!i10b 1
+!s100 Goah<5m2KEakWdmX7=ZX30
+IhEUfh1CQ544d6L:TnB04C3
+R2
+R0
+w1612930398
+8C:/Users/likangli/Desktop/lkl/SM234/SM4/verilog/sm4_main_tb.vt
+FC:/Users/likangli/Desktop/lkl/SM234/SM4/verilog/sm4_main_tb.vt
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/likangli/Desktop/lkl/SM234/SM4/verilog/sm4_main_tb.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/likangli/Desktop/lkl/SM234/SM4/verilog|C:/Users/likangli/Desktop/lkl/SM234/SM4/verilog/sm4_main_tb.vt|
+!i113 1
+R5
+R6
+R7
+vsm4_round
+R1
+!i10b 1
+!s100 fNa47_MHYBXEX7j>O:VSN0
+IklJJd=kFcnKE^2][PTinV1
+R2
+R0
+w1612705276
+8C:/Users/likangli/Desktop/lkl/SM234/SM4/verilog/sm4_round.v
+FC:/Users/likangli/Desktop/lkl/SM234/SM4/verilog/sm4_round.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/likangli/Desktop/lkl/SM234/SM4/verilog/sm4_round.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/likangli/Desktop/lkl/SM234/SM4/verilog|C:/Users/likangli/Desktop/lkl/SM234/SM4/verilog/sm4_round.v|
+!i113 1
+R5
+R6
+R7
+vsm4_Sbox
+R1
+!i10b 1
+!s100 i;?0b=KGMlg_@i`kbJJF>2
+I`AlI6i0jofkMd7H9[^CP`1
+R2
+R0
+w1612500047
+8C:/Users/likangli/Desktop/lkl/SM234/SM4/verilog/sm4_Sbox.v
+FC:/Users/likangli/Desktop/lkl/SM234/SM4/verilog/sm4_Sbox.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/likangli/Desktop/lkl/SM234/SM4/verilog/sm4_Sbox.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/likangli/Desktop/lkl/SM234/SM4/verilog|C:/Users/likangli/Desktop/lkl/SM234/SM4/verilog/sm4_Sbox.v|
+!i113 1
+R5
+R6
+R7
+nsm4_@sbox
